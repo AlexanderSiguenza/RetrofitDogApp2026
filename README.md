@@ -1,6 +1,24 @@
 # RetrofitApp
 Ejemplo de Retrofit para consumir una api https://dog.ceo/api/breeds/list/all
 
+## Nota importante sobre compatibilidad de versiones
+
+Para que este proyecto de Retrofit y Data Binding compile y funcione sin errores técnicos, es obligatorio configurar las siguientes versiones en el archivo libs.versions.toml. El uso de versiones más recientes (especialmente versiones Alpha o Beta) puede causar fallos internos en el compilador de Kotlin que son difíciles de rastrear.
+
+Versiones Requeridas:
+•	AGP (Android Gradle Plugin): 8.9.0
+•	Kotlin: 2.0.21
+•	Core KTX: 1.15.0
+
+##¿Por qué es importante respetar estas versiones?
+1.	Estabilidad del Compilador K2: A partir de Kotlin 2.0, se introdujo un nuevo motor de compilación. Las versiones indicadas (AGP 8.9.0 y Kotlin 2.0.21) son las que han demostrado mayor estabilidad al trabajar con Data Binding, evitando errores críticos.
+
+2.	Sincronización de Librerías: La librería Core KTX 1.15.0 está diseñada específicamente para aprovechar las mejoras de Kotlin 2.0. Si intentan mezclar versiones antiguas con nuevas, el proyecto lanzará errores de metadatos incompatibles al compilar.
+
+3.	Consistencia en el Laboratorio: Utilizar una base común garantiza que el código de la guía funcione igual en todas las computadoras, evitando perder tiempo en errores de configuración del entorno y enfocándonos en lo importante: el consumo de APIs y el manejo de datos.
+
+##Consejo: Si Android Studio les sugiere un Upgrade automático de Gradle, por favor ignórenlo para este proyecto. Mantener esta configuración les ahorrará muchos dolores de cabeza.
+
 ## Descripción
 **RetrofitApp** es una aplicación Android que utiliza la biblioteca Retrofit para realizar solicitudes a una API REST y obtener imágenes de perros por raza. Permite al usuario buscar imágenes de perros a través de un `SearchView`, mostrando los resultados en un `RecyclerView`.
 
